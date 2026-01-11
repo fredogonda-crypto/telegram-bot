@@ -1,5 +1,11 @@
 import os
-from telegram import Update
+
+from telegram import (
+    Update,
+    ReplyKeyboardMarkup,
+    KeyboardButton,
+)
+
 from telegram.ext import (
     ApplicationBuilder,
     CommandHandler,
@@ -101,5 +107,6 @@ app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text))
 
 print("✅ Бот запущен")
 app.run_polling()
+
 
 

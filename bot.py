@@ -1,7 +1,8 @@
+import os
 from telegram import Update, ReplyKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
 
-TOKEN = "8284940751:AAGe3tJGRRljvTzWweEw9u4IGHxVPy8deMY"
+TOKEN = os.getenv("TELEGRAM_TOKEN")
 
 # --- КНОПКИ ---
 main_menu = ReplyKeyboardMarkup(
@@ -94,3 +95,4 @@ app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text))
 
 print("✅ Бот запущен")
 app.run_polling()
+
